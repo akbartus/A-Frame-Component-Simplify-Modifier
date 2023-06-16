@@ -1,5 +1,5 @@
 # A-Frame-Component: Simplify-Modifier 
-<img src="img/screenshot.gif" title="Video screen capture" alt="Video screen capture" height="400">
+<img src="img/screenshot.jpg" title="Video screen capture" alt="Video screen capture" height="400">
 
 ### **Description / Rationale**
 This is A-Frame component for simplification of GLTF meshes. It is the adaptation of similar <a href="https://threejs.org/examples/webgl_modifier_simplifier.html">example</a> made in Three.js with additional features:
