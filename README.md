@@ -40,4 +40,4 @@ Please not that meshes without textures are only supported. When doing simplific
 The project is powered by AFrame and Three.js.
 
 ### **Demo**
-See demo of the component here: [Demo](mapbox-component.glitch.me/)
+See demo of the component here: [Demo](https://simplify-modifier.glitch.me/)
