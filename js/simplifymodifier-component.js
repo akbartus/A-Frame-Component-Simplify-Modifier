@@ -4,7 +4,8 @@ AFRAME.registerComponent('simplify-modifier', {
 	schema: {
 	  color: { type: 'color', default: '#ffffff' },
 		wireframe: { type: 'boolean', default: false },
-		count: { type: 'number', default: 0.7 }
+		count: { type: 'number', default: 0.7 },
+		offset: { type: 'number', default: 1 }
 	},
 	init: function () {
 	  let scene = document.querySelector("a-scene").object3D;
@@ -26,7 +27,7 @@ AFRAME.registerComponent('simplify-modifier', {
 		// Copy position, rotation and scale
 		simplified.position.copy(gltfModel.object3D.position);
 		// Position model near original
-		simplified.position.x = 1;
+		simplified.position.x = this.data.offset;
 		simplified.rotation.copy(gltfModel.object3D.rotation);
 		simplified.scale.copy(gltfModel.object3D.scale);
 		scene.add(simplified);
