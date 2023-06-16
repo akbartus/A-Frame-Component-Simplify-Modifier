@@ -12,32 +12,29 @@ This is A-Frame component for simplification of GLTF meshes. It is the adaptatio
 In order to use the component attach "simplify-modifier" to a-entity with gltf-model component. The component has the following attributes: 
 * <b>color: { type: 'color', default: '#ffffff' }</b> - Color of the simplified mesh
 * <b>wireframe: { type: 'boolean', default: false }</b> - Whether to show wireframe of simplified mesh or not
-* <b>count: { type: 'number', default: 0.7 }</b> - Vertices to remove. Accepts values from 0 to 1. 
-* <b>offset: { type: 'number', default: 1 }</b>
+* <b>count: { type: 'number', default: 0.7 }</b> - Vertices to remove. Accepts values from 0 to 1. 0 - almost no simplifaction is made. 1 - complete simplification. Please note that if 1 is selected, mesh will not be visible. 
+* <b>offset: { type: 'number', default: 1 }</b> - Offset of simplified mesh on x-axis. If 0 is selected, it will be in the same position as original GLTF model.
 
 The code below shows the sample implementation of the component:
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset='utf-8' />
-    <title>A-Frame Component: Mapbox</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <title>A-Frame Component: Simplify Modifier</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-    <script src="js/mapbox-component.js">
-    </script>
+    <script src="js/simplifymodifier-component.js"></script>
 </head>
 <body>
-     <a-scene>
-        <a-plane mapbox-component="attach: true" position="0 0 -3" rotation="0 0 0" width="8" height="5"
-            color="#ddd"></a-plane>       
-        <a-camera position="0 0 0" cursor="rayOrigin: mouse;" raycaster="objects: .clickable"></a-camera>
-        <a-sky color="#ECECEC"></a-sky>
+    <a-scene>
+        <a-entity simplify-modifier="color: lightblue" gltf-model="3d/LeePerrySmith.glb" position="-1 1.5 -2" rotation="0 0 0" scale="0.2 0.2 0.2" scale="0.01 0.01 0.01"></a-entity>
+        <a-sky color="#000"></a-sky>
     </a-scene>
 </body>
 </html>
 ```
-Please note that a-camera primitive is used with raycast and rayorigin to enable click events. Without it navigation buttons will not work! 
-If you want to use it in VR, just attach laser pointer with raycaster showing to .clickable class.
+
 
 ### **Tech Stack**
 The project is powered by AFrame and Three.js.
